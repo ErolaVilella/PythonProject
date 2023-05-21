@@ -6,10 +6,12 @@ using UnityEngine.EventSystems;
 
 public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-
+    //public string DragName;
+    public int targetId;
     public Image thisImage;
     public Vector3 startPosition;
-    
+    //private string drop;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         thisImage.raycastTarget = false;
