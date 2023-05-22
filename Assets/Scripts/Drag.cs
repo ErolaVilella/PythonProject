@@ -11,22 +11,38 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public Image thisImage;
     public Vector3 startPosition;
     public Vector3 OGPosition;
+    public bool isDraggable;
+
+    private void Start()
+    {
+        OGPosition = transform.position;
+        print(OGPosition);
+        isDraggable = true;
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (isDraggable) {
         thisImage.raycastTarget = false;
         startPosition = transform.position;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = eventData.position;
+        if (isDraggable)
+        {
+            transform.position = eventData.position;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.position = startPosition;
-        thisImage.raycastTarget = true;
+        if (isDraggable)
+        {
+            transform.position = startPosition;
+            thisImage.raycastTarget = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

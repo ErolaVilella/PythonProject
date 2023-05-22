@@ -9,18 +9,17 @@ using TMPro;
 public class SceneController : MonoBehaviour
 {
     public Drop[] potetos;
+    public Drag[] dragArray;
     [SerializeField] TMP_Text fillError;
     private bool check;
     public Drag drag;
     public Vector3 Pos;
-    public Drag Item;
+    public Transform Item;
 
     private void Start()
     {
         fillError.enabled = false;
-        Pos = drag.GetComponent<Drag>().OGPosition;
-        Item = drag.GetComponent<Drag>();
-        print(Pos);
+        //Pos = drag.GetComponent<Drag>().OGPosition;
     }
 
     public void fill()
@@ -55,19 +54,21 @@ public class SceneController : MonoBehaviour
 
         for (int i = 0; i<potetos.Length; i++)
         {
-            print(potetos[i].status);
+            Pos = dragArray[i].GetComponent<Drag>().OGPosition;
+            print(Pos);
+            //print(potetos[i].status);
+
             if (potetos[i].status.Equals(2))
             {
                 potetos[i].GetComponent<Image>().color = Color.green;
-                
+                dragArray[i].GetComponent<Drag>().isDraggable = false;
             }
 
             else if (potetos[i].status.Equals(1)) 
             {
                 potetos[i].GetComponent<Image>().color = Color.red;
-                print(Item.startPosition);
-                Item.transform.position = Pos;
-                print(Item.startPosition);
+                //drag.GetComponent<Transform>().position = Pos;
+                //dragArray[i].GetComponent<Transform>().position = Pos;
             }
 
             else
