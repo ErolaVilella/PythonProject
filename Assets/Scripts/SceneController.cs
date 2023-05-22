@@ -11,10 +11,16 @@ public class SceneController : MonoBehaviour
     public Drop[] potetos;
     [SerializeField] TMP_Text fillError;
     private bool check;
+    public Drag drag;
+    public Vector3 Pos;
+    public Drag Item;
 
     private void Start()
     {
         fillError.enabled = false;
+        Pos = drag.GetComponent<Drag>().OGPosition;
+        Item = drag.GetComponent<Drag>();
+        print(Pos);
     }
 
     public void fill()
@@ -29,11 +35,12 @@ public class SceneController : MonoBehaviour
                 fillError.text = "Hi ha espais buits";
                 fillError.enabled = true;
                 check = false;
+                potetos[i].status = 0;
                 return;
             }
             
         }
-        if (check == true)
+        if (check)
         {
             print("entra al check true");
             fillError.enabled = false;
@@ -58,7 +65,9 @@ public class SceneController : MonoBehaviour
             else if (potetos[i].status.Equals(1)) 
             {
                 potetos[i].GetComponent<Image>().color = Color.red;
-
+                print(Item.startPosition);
+                Item.transform.position = Pos;
+                print(Item.startPosition);
             }
 
             else

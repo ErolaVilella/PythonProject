@@ -12,11 +12,6 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public Vector3 startPosition;
     public Vector3 OGPosition;
 
-    private void Start()
-    {
-        OGPosition = startPosition;
-    }
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         thisImage.raycastTarget = false;
@@ -41,7 +36,11 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<Drop>().status = 0;
         collision.gameObject.GetComponent<Drop>().filled = false;
+    }
+
+    private void Update()
+    {
+        
     }
 }
