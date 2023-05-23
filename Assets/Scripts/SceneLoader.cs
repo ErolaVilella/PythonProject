@@ -7,6 +7,9 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] GameObject ClientInfo;
     [SerializeField] GameObject PauseInfo;
+
+    public bool time;
+    public Timer timer;
     
     
     public static string PreviousScene;
@@ -47,11 +50,13 @@ public class SceneLoader : MonoBehaviour
 
     public void ObrirPausa()
     {
+        timer.GetComponent<Timer>().starts = false;
         PauseInfo.SetActive(true);
     }
 
     public void TancarPausa()
     {
+        timer.GetComponent<Timer>().starts = true;
         PauseInfo.SetActive(false);
     }
 }

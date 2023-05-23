@@ -1351,6 +1351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClientInfo: {fileID: 1409063961}
   PauseInfo: {fileID: 1134944645810872165}
+  time: 0
+  timer: {fileID: 1661963481}
 --- !u!4 &708569788
 Transform:
   m_ObjectHideFlags: 0
@@ -1820,6 +1822,7 @@ MonoBehaviour:
   drag: {fileID: 582518819}
   Pos: {x: 0, y: 0, z: 0}
   Item: {fileID: 0}
+  gameScore: 0
 --- !u!4 &1014626922
 Transform:
   m_ObjectHideFlags: 0
@@ -3611,6 +3614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1661963482}
+  starts: 0
+  timeScore: 0
 --- !u!114 &1661963482
 MonoBehaviour:
   m_ObjectHideFlags: 0

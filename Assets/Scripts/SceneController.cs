@@ -16,12 +16,13 @@ public class SceneController : MonoBehaviour
     public Vector3 Pos;
     public Transform Item;
     
-    public int gameScore;
+    [HideInInspector] public int gameScore;
 
     private void Start()
     {
         fillError.enabled = false;
         //Pos = drag.GetComponent<Drag>().OGPosition;
+        gameScore = 0;
     }
 
     public void fill()
@@ -43,7 +44,7 @@ public class SceneController : MonoBehaviour
         }
         if (check)
         {
-            print("entra al check true");
+            //print("entra al check true");
             fillError.enabled = false;
             Verify();
         }
@@ -57,7 +58,7 @@ public class SceneController : MonoBehaviour
         for (int i = 0; i<potetos.Length; i++)
         {
             Pos = dragArray[i].GetComponent<Drag>().OGPosition;
-            print(Pos);
+            //print(Pos);
             //print(potetos[i].status);
 
             if (potetos[i].status.Equals(2))
@@ -71,6 +72,7 @@ public class SceneController : MonoBehaviour
                 potetos[i].GetComponent<Image>().color = Color.red;
                 //drag.GetComponent<Transform>().position = Pos;
                 //dragArray[i].GetComponent<Transform>().position = Pos;
+                gameScore++;
             }
 
             else

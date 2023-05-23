@@ -16,7 +16,7 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     private void Start()
     {
         OGPosition = transform.position;
-        print(OGPosition);
+        //print(OGPosition);
         isDraggable = true;
     }
 
