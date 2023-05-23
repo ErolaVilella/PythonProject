@@ -326,7 +326,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 241
+        x: 28.671303
         y: 275
         width: 160
         height: 30
@@ -375,8 +375,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 440.88678
-        y: 274.9434
+        x: 384.7224
+        y: 273.57355
         width: 160
         height: 30
     - id: 4
@@ -430,8 +430,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 627
-        y: 270
+        x: 687.274
+        y: 274.10956
         width: 160
         height: 30
     - id: 5
@@ -479,8 +479,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 809
-        y: 272
+        x: 1061.0547
+        y: 269.26025
         width: 160
         height: 30
     - id: 6
@@ -528,7 +528,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 240
+        x: 27.671303
         y: 401
         width: 160
         height: 30
@@ -587,8 +587,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 627
-        y: 407.73584
+        x: 687.274
+        y: 411.8454
         width: 160
         height: 30
     - id: 8
@@ -640,13 +640,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 627.9434
-        y: 540.75476
+        x: 688.2174
+        y: 544.8644
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 85.23747, y: 88.966354}
-    canvasZoom: 1.06
+    canvasScrollPosition: {x: 22.074331, y: 15.322892}
+    canvasZoom: 0.73000026
   - id: 2
     fields:
     - title: Title
@@ -2820,11 +2820,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -2836,16 +2836,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Importar los datos de un archivo CSV usando pandas, convertir las
           temperaturas de Fahrenheit a Celsius y calcular la mediana.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 7
       isRoot: 0
       isGroup: 0

@@ -15,6 +15,8 @@ public class SceneController : MonoBehaviour
     public Drag drag;
     public Vector3 Pos;
     public Transform Item;
+    
+    public int gameScore;
 
     private void Start()
     {
