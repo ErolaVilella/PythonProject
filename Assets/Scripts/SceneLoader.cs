@@ -10,8 +10,8 @@ public class SceneLoader : MonoBehaviour
 
     public bool time;
     public Timer timer;
-    
-    
+
+
     public static string PreviousScene;
 
     /// <summary>
@@ -50,13 +50,13 @@ public class SceneLoader : MonoBehaviour
 
     public void ObrirPausa()
     {
-        timer.GetComponent<Timer>().starts = false;
+        timer.GetComponent<Timer>().pauseTimer();
         PauseInfo.SetActive(true);
     }
 
     public void TancarPausa()
     {
-        timer.GetComponent<Timer>().starts = true;
+        timer.GetComponent<Timer>().StartTimer();
         PauseInfo.SetActive(false);
     }
 }

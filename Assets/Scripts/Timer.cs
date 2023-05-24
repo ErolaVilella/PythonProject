@@ -2,60 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Timer : MonoBehaviour
 {
 
-    [SerializeField] TMP_Text timer;
+    [SerializeField] TMP_Text timerText;
 
-    public bool starts;
+    [HideInInspector] public bool isPaused;
+    float timer;
     private float startTime;
-    public int timeScore;
+    //public int timeScore;
 
     private void Start()
     {
-        starts = false;
-        timeScore = 0;
-    }
-
-    public void StartTimer()
-    {
-        startTime = Time.time;
-        starts = true;
-        //print(starts);
-
+        isPaused = true;
+        //timeScore = 0;
     }
 
     private void Update()
     {
-        timerFunction();
-
+        if (!isPaused)
+        {
+            timer += Time.deltaTime;
+            timerText.text = string.Format("{00}:{01}:{02}", ((int)timer / 60).ToString("00"), (timer % 60).ToString("00"), ((timer * 100) % 100).ToString("00"));
+        }
     }
 
-    public void timerFunction()
+    public void StartTimer()
     {
-        if (starts == true)
-        {
-            float TimerControl = Time.time - startTime;
-            string mins = ((int)TimerControl / 60).ToString("00");
-            string segs = (TimerControl % 60).ToString("00");
-            string milisegs = ((TimerControl * 100) % 100).ToString("00");
-
-            string TimerString = string.Format("{00}:{01}:{02}", mins, segs, milisegs);
-
-            timeScore++;
-
-            //print(TimerString);
-            timer.text = TimerString;
-        }
-
-        if (starts == false)
-        {
-            return;
-        }
+        isPaused = false;
+        Time.timeScale = 1;
     }
 
-
-
+    public void pauseTimer()
+    {
+        isPaused = true;
+        Time.timeScale = 0;
+    }
 
 }
