@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class SceneController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class SceneController : MonoBehaviour
     public Drag drag;
     public Vector3 Pos;
     public Transform Item;
-    
+
     [HideInInspector] public int gameScore;
 
     private void Start()
@@ -28,58 +29,48 @@ public class SceneController : MonoBehaviour
 
     public void fill()
     {
-        print("check");
         check = true;
 
         for (int i = 0; i < slotsArray.Length; i++)
         {
- 
             if (slotsArray[i].filled.Equals(false))
             {
-                fillError.text = "Hi ha espais buits";
+                fillError.text = "¡Hay espacios vacios!";
                 fillError.enabled = true;
                 check = false;
                 slotsArray[i].status = 0;
                 return;
             }
-            
+
         }
         if (check)
         {
             fillError.enabled = false;
             Verify();
         }
-        
-        
+
+
     }
-    
+
     public void Verify()
     {
-
-        for (int i = 0; i< slotsArray.Length; i++)
+        foreach (Drag drag in dragArray)
         {
-            Pos = dragArray[i].GetComponent<Drag>().OGPosition;
+            Drop targetDrop = slotsArray.FirstOrDefault(drop => drop.Id == drag.filledId);
+            if (targetDrop == null) continue;
 
-            if (slotsArray[i].status.Equals(2))
+            if (drag.targetId == drag.filledId)
             {
-                slotsArray[i].GetComponent<Image>().color = Color.green;
-                dragArray[i].GetComponent<Drag>().isDraggable = false;
+                drag.isDraggable = false;
+                targetDrop.GetComponent<Image>().color = Color.green;
             }
-
-            else if (slotsArray[i].status.Equals(1)) 
-            {
-                slotsArray[i].GetComponent<Image>().color = Color.red;
-                gameScore++;
-            }
-
             else
             {
-                slotsArray[i].GetComponent<Image>().color = Color.blue;
+                drag.transform.position = drag.OGPosition;
+                targetDrop.GetComponent<Image>().color = Color.red;
             }
         }
         AreAllElementsEqual(slotsArray, 2);
-
-        
     }
 
     bool AreAllElementsEqual<T>(T[] array, int compareValue)

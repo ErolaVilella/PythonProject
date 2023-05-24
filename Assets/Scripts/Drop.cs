@@ -27,7 +27,6 @@ public class Drop : MonoBehaviour, IDropHandler
         {
             draggable.startPosition = transform.position;
         }
-
         if (draggable.targetId == Id)
         {
             status = 2;
@@ -37,7 +36,7 @@ public class Drop : MonoBehaviour, IDropHandler
         {
             status = 1;
         }
-        
+        draggable.filledId = Id;
     }
 
 }

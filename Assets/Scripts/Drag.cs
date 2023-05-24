@@ -6,12 +6,13 @@ using UnityEngine.EventSystems;
 
 public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-  
+
     public int targetId;
     public Image thisImage;
-    public Vector3 startPosition;
-    public Vector3 OGPosition;
-    public bool isDraggable;
+    [HideInInspector] public int filledId;
+    [HideInInspector] public Vector3 startPosition;
+    [HideInInspector] public Vector3 OGPosition;
+    [HideInInspector] public bool isDraggable;
 
     private void Start()
     {
@@ -22,9 +23,10 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (isDraggable) {
-        thisImage.raycastTarget = false;
-        startPosition = transform.position;
+        if (isDraggable)
+        {
+            thisImage.raycastTarget = false;
+            startPosition = transform.position;
         }
     }
 
@@ -57,6 +59,6 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
     private void Update()
     {
-        
+
     }
 }
