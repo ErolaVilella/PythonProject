@@ -8,7 +8,8 @@ using TMPro;
 
 public class SceneController : MonoBehaviour
 {
-    public Drop[] potetos;
+    [Header("Arrays")]
+    public Drop[] slotsArray;
     public Drag[] dragArray;
     [SerializeField] TMP_Text fillError;
     private bool check;
@@ -27,24 +28,24 @@ public class SceneController : MonoBehaviour
 
     public void fill()
     {
+        print("check");
         check = true;
 
-        for (int i = 0; i < potetos.Length; i++)
+        for (int i = 0; i < slotsArray.Length; i++)
         {
  
-            if (potetos[i].filled.Equals(false))
+            if (slotsArray[i].filled.Equals(false))
             {
                 fillError.text = "Hi ha espais buits";
                 fillError.enabled = true;
                 check = false;
-                potetos[i].status = 0;
+                slotsArray[i].status = 0;
                 return;
             }
             
         }
         if (check)
         {
-            //print("entra al check true");
             fillError.enabled = false;
             Verify();
         }
@@ -55,32 +56,28 @@ public class SceneController : MonoBehaviour
     public void Verify()
     {
 
-        for (int i = 0; i<potetos.Length; i++)
+        for (int i = 0; i< slotsArray.Length; i++)
         {
             Pos = dragArray[i].GetComponent<Drag>().OGPosition;
-            //print(Pos);
-            //print(potetos[i].status);
 
-            if (potetos[i].status.Equals(2))
+            if (slotsArray[i].status.Equals(2))
             {
-                potetos[i].GetComponent<Image>().color = Color.green;
+                slotsArray[i].GetComponent<Image>().color = Color.green;
                 dragArray[i].GetComponent<Drag>().isDraggable = false;
             }
 
-            else if (potetos[i].status.Equals(1)) 
+            else if (slotsArray[i].status.Equals(1)) 
             {
-                potetos[i].GetComponent<Image>().color = Color.red;
-                //drag.GetComponent<Transform>().position = Pos;
-                //dragArray[i].GetComponent<Transform>().position = Pos;
+                slotsArray[i].GetComponent<Image>().color = Color.red;
                 gameScore++;
             }
 
             else
             {
-                potetos[i].GetComponent<Image>().color = Color.blue;
+                slotsArray[i].GetComponent<Image>().color = Color.blue;
             }
         }
-        AreAllElementsEqual(potetos, 2);
+        AreAllElementsEqual(slotsArray, 2);
 
         
     }
@@ -88,7 +85,7 @@ public class SceneController : MonoBehaviour
     bool AreAllElementsEqual<T>(T[] array, int compareValue)
     {
         if (array == null || array.Length == 0)
-            return true; // return true or throw exception as per your needs
+            return true;
 
         for (int i = 0; i < array.Length; i++)
         {

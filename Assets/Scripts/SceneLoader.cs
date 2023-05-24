@@ -38,12 +38,16 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadSceneAsync(PreviousScene);
     }
 
-    public void TancarClientRequest()
+    public void CloseClientRequest()
     {
         ClientInfo.SetActive(false);
+        if(timer.GetComponent<Timer>().isPaused)
+        {
+            timer.GetComponent<Timer>().StartTimer();
+        }
     }
 
-    public void ObrirClientRequest()
+    public void OpenClientRequest()
     {
         ClientInfo.SetActive(true);
     }
