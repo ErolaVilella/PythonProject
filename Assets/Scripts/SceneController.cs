@@ -14,9 +14,9 @@ public class SceneController : MonoBehaviour
     public Drag[] dragArray;
     [SerializeField] TMP_Text fillError;
     private bool check;
-    public Drag drag;
-    public Vector3 Pos;
-    public Transform Item;
+
+    [Header("Level score handler")]
+    public LevelScore levelScore;
 
     [HideInInspector] public int gameScore;
 
@@ -68,6 +68,7 @@ public class SceneController : MonoBehaviour
             {
                 drag.transform.position = drag.OGPosition;
                 targetDrop.GetComponent<Image>().color = Color.red;
+                levelScore.GetComponent<LevelScore>().lowerScore();
             }
         }
         AreAllElementsEqual(slotsArray, 2);
