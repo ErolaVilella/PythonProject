@@ -21,6 +21,8 @@ public class SceneController : MonoBehaviour
 
     [HideInInspector] public int gameScore;
 
+    public Timer timer;
+
 
     private void Start()
     {
@@ -76,23 +78,26 @@ public class SceneController : MonoBehaviour
         }
         if(AreAllElementsEqual(slotsArray, 2))
         {
+            timer.GetComponent<Timer>().pauseTimer();
             Finished.SetActive(true);
         }
     }
 
-    bool AreAllElementsEqual<T>(T[] array, int compareValue)
+    bool AreAllElementsEqual(Drop[] array, int compareValue)
     {
+        print("entra");
         if (array == null || array.Length == 0)
             return true;
 
         for (int i = 0; i < array.Length; i++)
         {
-            if (!array[i].Equals(compareValue))
+            if (!array[i].status.Equals(compareValue))
             {
+                print("Check false");
                 return false;
             }
         }
-
+        print("Check true");
         return true;
     }
 

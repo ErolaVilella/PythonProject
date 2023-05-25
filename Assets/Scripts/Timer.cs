@@ -6,8 +6,7 @@ using System;
 
 public class Timer : MonoBehaviour
 {
-
-    [SerializeField] TMP_Text timerText;
+    [SerializeField] public TMP_Text timerText;
 
     [HideInInspector] public bool isPaused;
     float timer;
