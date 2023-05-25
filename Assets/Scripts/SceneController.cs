@@ -13,6 +13,7 @@ public class SceneController : MonoBehaviour
     public Drop[] slotsArray;
     public Drag[] dragArray;
     [SerializeField] TMP_Text fillError;
+    [SerializeField] GameObject Finished;
     private bool check;
 
     [Header("Level score handler")]
@@ -20,11 +21,13 @@ public class SceneController : MonoBehaviour
 
     [HideInInspector] public int gameScore;
 
+
     private void Start()
     {
         fillError.enabled = false;
         //Pos = drag.GetComponent<Drag>().OGPosition;
         gameScore = 0;
+        Finished.SetActive(false);
     }
 
     public void fill()
@@ -71,7 +74,10 @@ public class SceneController : MonoBehaviour
                 levelScore.GetComponent<LevelScore>().lowerScore();
             }
         }
-        AreAllElementsEqual(slotsArray, 2);
+        if(AreAllElementsEqual(slotsArray, 2))
+        {
+            Finished.SetActive(true);
+        }
     }
 
     bool AreAllElementsEqual<T>(T[] array, int compareValue)

@@ -245,11 +245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueEntrySceneEvents:
-  - guid: c267915d-002a-4522-b379-4e067d2d2d8a
+  - guid: f5aec6d4-6ced-4d67-9282-c22b7c6ad191
     onExecute:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 708569787}
+        - m_Target: {fileID: 684045887}
           m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
           m_MethodName: CargarEscena
           m_Mode: 5
@@ -258,7 +258,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 1_Level
+            m_StringArgument: Tutorial
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!4 &606455869
@@ -276,6 +276,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &684045885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684045886}
+  - component: {fileID: 684045887}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &684045886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684045885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1088.9551, y: 544.0686, z: 7.0399985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &684045887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684045885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50fedee0cf85134695905b58231a775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClientInfo: {fileID: 0}
+  PauseInfo: {fileID: 0}
+  Tutorial: {fileID: 0}
+  time: 0
+  timer: {fileID: 0}
 --- !u!1 &695705633
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClientInfo: {fileID: 0}
   PauseInfo: {fileID: 0}
+  Tutorial: {fileID: 0}
   time: 0
   timer: {fileID: 0}
 --- !u!4 &708569788
