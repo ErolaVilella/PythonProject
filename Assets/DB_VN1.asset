@@ -810,8 +810,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 146.51404, y: 0}
-    canvasZoom: 0.58000034
+    canvasScrollPosition: {x: 892.024, y: 304.2738}
+    canvasZoom: 1.4799997
   - id: 2
     fields:
     - title: Title
@@ -1296,7 +1296,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: c2cd4bac-bcb4-4865-8105-27eae74b52c4
+        value: 5aa3af90-1d78-4fa2-81bf-d72ff65377bf
         type: 0
         typeString: 
       conversationID: 2
@@ -2003,6 +2003,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 68f366bc-5705-437d-8ecb-8d682352d3cb
+        type: 0
+        typeString: 
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -2706,6 +2710,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: d2a48878-0ea6-4bee-930b-796aa5d4ac67
+        type: 0
+        typeString: 
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3053,8 +3061,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Soy un cient\xEDfico y a menudo tengo que convertir temperaturas
-          de grados Celsius a Fahrenheit. \xBFPodr\xEDas ayudarme a crear una funci\xF3n
+        value: "Soy cient\xEDfica y a menudo tengo que convertir temperaturas de
+          grados Celsius a Fahrenheit. \xBFPodr\xEDas ayudarme a crear una funci\xF3n
           que haga esto?"
         type: 0
         typeString: 
@@ -3409,6 +3417,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 0b82ea89-df28-460a-9719-265705985163
         type: 0
         typeString: 
       conversationID: 5
@@ -4045,6 +4057,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 0f7ea5ef-dad0-4799-8a8b-c788fc885f9b
         type: 0
         typeString: 
       conversationID: 6

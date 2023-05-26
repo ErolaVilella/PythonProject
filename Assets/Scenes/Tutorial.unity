@@ -1987,6 +1987,18 @@ MonoBehaviour:
           m_StringArgument: 1_Level
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1830969961}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &923424500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2025,6 +2037,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923424497}
   m_CullTransparentMesh: 1
+--- !u!1 &934568482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5667543551149187483, guid: 783712d853894b640911b621432dfc3b, type: 3}
+  m_PrefabInstance: {fileID: 6231064366065686784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &940612647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,9 +2617,10 @@ MonoBehaviour:
   - {fileID: 1725063497}
   - {fileID: 1670122647}
   fillError: {fileID: 1639924363}
-  Finished: {fileID: 0}
+  Finished: {fileID: 934568482}
   levelScore: {fileID: 1640455469}
   gameScore: 0
+  timer: {fileID: 0}
 --- !u!4 &1014626922
 Transform:
   m_ObjectHideFlags: 0
@@ -4849,6 +4867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ab4ca36724e83408df4f3b8b4c070f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
   levelScore: 0
   scoreDepletionRate: 0
   scoreReductionPerFailed: 0
@@ -6281,8 +6300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830969960}
-  - component: {fileID: 1830969959}
-  - component: {fileID: 1830969958}
+  - component: {fileID: 1830969961}
   m_Layer: 0
   m_Name: Audio_Manager
   m_TagString: Untagged
@@ -6290,22 +6308,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1830969958
-MonoBehaviour:
+--- !u!4 &1830969960
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830969957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 238aaa99d99afb940826bae79b467558, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VolumeOn: {fileID: 0}
-  VolumeOff: {fileID: 0}
-  BGM: {fileID: 1830969959}
---- !u!82 &1830969959
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1119.579, y: 521.6918, z: 3.5149658}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1830969961
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6315,9 +6333,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 96e2ae72595bdb945ae0cdb4e6ec9643, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: a2a1922400ac54847b3b5e812d75df57, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6401,21 +6419,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1830969960
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830969957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1119.579, y: 521.6918, z: 3.5149658}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1910470512
 GameObject:
   m_ObjectHideFlags: 0
@@ -7089,7 +7092,7 @@ PrefabInstance:
     - target: {fileID: 5152128890541685447, guid: 783712d853894b640911b621432dfc3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1830969958}
+      objectReference: {fileID: 0}
     - target: {fileID: 5667543551149187483, guid: 783712d853894b640911b621432dfc3b, type: 3}
       propertyPath: m_Name
       value: Pausa

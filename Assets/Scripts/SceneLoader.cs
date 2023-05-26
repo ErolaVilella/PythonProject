@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -20,11 +22,29 @@ public class SceneLoader : MonoBehaviour
     /// <param name="name">Nombre de la escena a cargar.</param>
     /// 
 
+    IEnumerator NextLevelAfterWait(string name)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        print("carrega");
+
+        PreviousScene = SceneManager.GetActiveScene().name;
+        //SceneManager.LoadScene(name);
+        SceneManager.LoadSceneAsync(name);
+    }
+
+
     public void CargarEscena(string name)
     {
         // Carga la escena necesaria (solo al hacer clic en botones "Jugar", "Salir". También en botón "Volver a Jugar" de la escena "Win".
         PreviousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadSceneAsync(name);
+    }
+
+
+    public void CargarEscenaMenus(string name)
+    {
+        StartCoroutine(NextLevelAfterWait(name));
     }
 
     /// <summary>
@@ -63,4 +83,11 @@ public class SceneLoader : MonoBehaviour
         timer.GetComponent<Timer>().StartTimer();
         PauseInfo.SetActive(false);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    
 }
